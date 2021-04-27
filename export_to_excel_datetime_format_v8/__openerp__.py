@@ -35,6 +35,8 @@
     'data': [
         'views/res_lang.xml'
     ],
+    'images': ['static/description/date.jpeg'],
+
     # only loaded in demonstration mode
     'demo': [],
 }
