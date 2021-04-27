@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="res_lang_form_inherit" model="ir.ui.view">
+            <field name="name">res.lang.form</field>
+            <field name="model">res.lang</field>
+            <field name="inherit_id" ref="base.res_lang_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='time_format']"  position="after">
+                    <label for="custom_date_format" string="Excel Date Format"/>
+                    <div>
+                        <field name="custom_date_format" class="oe_inline" nolabel="1"/> 
+                    </div>
+                    <label for="custom_date_format" string="Excel Time Format"/>
+                    <div>
+                        <field name="custom_time_format" nolabel="1" class="oe_inline"/>
+                    </div>
+                </xpath>
+                <xpath expr="//sheet" position="inside">
+                    <group string="Legends for supported Excel Date/Time Formats">
+                        <div>YY - Year without century [00,99].</div>
+                        <div>YYYY- Year with century.</div>
+                        <div>M - Month with not leading 0.</div>
+                        <div>MM - Month with leading 0.</div>
+                        <div>MMM - Abbrevated Month Name.</div>
+                        <div>MMMM - Full month name.</div>
+                        <div>D - Date with not leading 0.</div>
+                        <div>DD - Date with leading 0.</div>
+                        <div>DDD - Abbrevated Weekday Name.</div>
+                        <div>DDDD - Full Weekday Name.</div>
+                        <div>H/h - Hour with not leading 0</div>
+                        <div>HH/hh - Hour with  leading 0.</div>
+                        <div>mm - Minute [00,59].</div>
+                        <div>SS/ss - Seconds.</div>
+                        <div>AM/PM - Equivalent of either AM or PM.</div>
+                    </group>
+                    <group string="Examples for Excel Date/Time Formats">
+                            <div>1. DDD, DD-MMM-YYYY    ==> Fri, 17-Jul-2020</div>
+                            <div>2. DDDD, DD/MM/YYYY    ==> Friday, 17/07/2020</div>
+                            <div>3. hh:mm:ss AM/PM      ==> 02:34:03 PM</div>
+                            <div>4. HH:mm:SS            ==> 14:34:03</div>
+                            <div>5. D-MMMM-YY           ==> 5-September-20</div>
+                    </group>				     
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>
